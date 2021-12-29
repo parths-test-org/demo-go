@@ -4,6 +4,7 @@ import (
 	"golang.org/x/crypto/ssh"
 	"log"
 	"net"
+	"os"
 )
 
 func connect() {
