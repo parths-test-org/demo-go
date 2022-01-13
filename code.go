@@ -146,6 +146,26 @@ func WriteProducts(productsSold []Product, productsLeft []Product, jsonPath stri
 	return nil
 }
 
+func WriteProducts2(productsSold []Product, productsLeft []Product, jsonPath string) error {
+	allProducts := []Product{}
+
+	for _, product := range productsSold {
+		allProducts = append(allProducts, product)
+	}
+
+	for i, _ := range productsLeft {
+		productsLeft = append(allProducts, productsLeft[i])
+	}
+
+	fmt.Println(allProducts[:])
+
+	if len(allProducts) == 0 {
+		return errors.New(fmt.Sprintf("%d products found. This is an error.", len(allProducts)))
+	}
+
+	return nil
+}
+
 func traverseProducts() {
 	var Products [2048]byte
 	for _, product := range Products {
