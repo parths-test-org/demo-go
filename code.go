@@ -45,7 +45,6 @@ func (seller Seller) DeliversTo(city string) bool {
 }
 
 func HasAnySellersFromCity(sellers []Seller, city string) {
-	city = city
 
 	for i := range sellers {
 		if sellers[i].Address.City == city {
